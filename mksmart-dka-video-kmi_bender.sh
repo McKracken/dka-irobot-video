@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# source kmi_catkin workspace
+source /home/bender/Projects/ros/indigo/kmi_catkin_workspace/devel/setup.bash
+echo "setup.bash sourced"
+
+# launch the laser, the robot, the map server and move_base
+xterm -e roslaunch kmi_navigation dka_video.launch &
+echo "platform started"
+
+#start the robot server
+#nohup python /home/bender/Projects/ros/indigo/kmi_catkin_workspace/src/dynamic_knowledge_acquisition/scripts/robot_server.py -w eduroam -p 8080 > robot_server.log &
+#echo "started the robot server (set up for eduroam / KBserverport 8080) "
+
+sleep 2
+
+# launch dka-server
+cd /home/bender/Projects/kmi_eclipse_workspace/dka-robo/server
+nohup ./run.sh -l KB_partial_kmi_simulated.nq > server.log &
+echo "dka-server started"
+
+sleep 10
+
+# set bot
+./dka.sh setbot http://localhost:5000
+echo "set bot at localhost:5000"
+
+sleep 2
+
+echo "Making random query"
+./dka.sh query "select ?room ?wifiSignal where {graph ?expiryDateInMs {  ?room <http://data.open.ac.uk/kmi/robo/hasWiFiSignal> ?wifiSignal. } }"
+
+echo "Yayyy :)"
