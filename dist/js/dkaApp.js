@@ -27,7 +27,7 @@ function indexController($scope,$interval,$sce,$http,$timeout,$window) {
 	init.then(function(result) {
 		// check connection with KB
 		var updateQuery = $scope.configfile.updatequery;
-		alert(updateQuery);		
+		//alert(updateQuery);		
 		console.log($scope.configfile.kbserverip);
 		$http({
 			method: 'GET',
@@ -53,7 +53,7 @@ function indexController($scope,$interval,$sce,$http,$timeout,$window) {
 			    	});
 		}, function errorCallback(response) {
 			console.log("Problems while contacting the KB server");	
-			//$window.location = $scope.errorUrl;
+			$window.location = $scope.errorUrl;
 		});
 	});
 }
@@ -207,7 +207,7 @@ function dkaController($scope,$interval,$sce,$http,$timeout){
 					$scope.configfile.robot.style.left = actualXPosition;
 					
 					//TODO Debug
-					console.log("X: " + $scope.configfile.robot.style.left + " Y: " + $scope.configfile.robot.style.top);
+					//console.log("X: " + $scope.configfile.robot.style.left + " Y: " + $scope.configfile.robot.style.top);
 		    	}, function errorCallback(response) {
 		    		console.log("Sorry, the robot is not responding")
 		    	});
@@ -236,7 +236,7 @@ function dkaController($scope,$interval,$sce,$http,$timeout){
 			var vars = response.data.vars;
 			var items = response.data.items;	
 			var now = Date.now();
-			console.log(response.data);
+			//console.log(response.data);
 			angular.forEach(items,function(item) {
 
 				var room = getURIName(item.room);
