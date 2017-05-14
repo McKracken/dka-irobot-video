@@ -174,7 +174,7 @@ function dkaController($scope,$interval,$sce,$http,$timeout){
 		$interval(placeRobot, 1000);
 		$scope.getPlan();
 		updateRooms();
-		$scope.startRandomBehaviour();
+		//$scope.startRandomBehaviour();
 		$interval(updateRoomCycle, 2000);
 	});
 	
@@ -385,7 +385,7 @@ function dkaController($scope,$interval,$sce,$http,$timeout){
 				$timeout(function callAtTimeout() {
 				 	console.log("[watch] Timeout occurred, restarting random behaviour");
 				},500).then(function() {
-					$scope.startRandomBehaviour();
+					//$scope.startRandomBehaviour();
 				});
 			}
 		}
@@ -425,7 +425,7 @@ function dkaController($scope,$interval,$sce,$http,$timeout){
 				$scope.resetPlan();
 				
 				// HERE
-				$scope.startRandomBehaviour();	
+				//$scope.startRandomBehaviour();	
 			}
 		}, function errorCallback(response) {
 			if(response.status == 409) {
@@ -436,7 +436,7 @@ function dkaController($scope,$interval,$sce,$http,$timeout){
 				$scope.resetPlan();
 				
 				// HERE
-				$scope.startRandomBehaviour();	
+				//$scope.startRandomBehaviour();	
 			}
 		});	
 	}
@@ -484,7 +484,7 @@ function dkaController($scope,$interval,$sce,$http,$timeout){
 				$scope.resetPlan();
 				
 				// HERE
-				$scope.startRandomBehaviour();			
+				//$scope.startRandomBehaviour();			
 			});
 	}
 		
