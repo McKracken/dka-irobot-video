@@ -250,8 +250,8 @@
 	{ "name": "What is the temperature of Room 22?",
 		"value" : "SELECT ?room ?temperature WHERE {graph ?expiryDateInMs { VALUES(?room) { (<http://data.open.ac.uk/kmi/location/Room22>) } ?room <http://data.open.ac.uk/kmi/robo/hasTemperature> ?temperature. } }"
 	},
-	{ "name": "What is the strenght of the wifi in Activity 4?",
-		"value" : "SELECT ?room ?wifiSignal WHERE {graph ?expiryDateInMs { VALUES(?room) { (<http://data.open.ac.uk/kmi/location/Activity4>) } ?room <http://data.open.ac.uk/kmi/robo/hasWiFiSignal> ?wifiSignal. } }"
+	{ "name": "What is the strenght of the wifi in Activity 3?",
+		"value" : "SELECT ?room ?wifiSignal WHERE {graph ?expiryDateInMs { VALUES(?room) { (<http://data.open.ac.uk/kmi/location/Activity3>) } ?room <http://data.open.ac.uk/kmi/robo/hasWiFiSignal> ?wifiSignal. } }"
 	},
 	{ "name": "How many people are there in Podium?",
 		"value" : "SELECT ?room ?temperature WHERE {graph ?expiryDateInMs { VALUES(?room) { (<http://data.open.ac.uk/kmi/location/Podium>) } ?room <http://data.open.ac.uk/kmi/robo/hasPeopleCount> ?temperature. } }"
